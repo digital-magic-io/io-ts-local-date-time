@@ -1,7 +1,7 @@
 {
   "name": "@digital-magic/io-ts-local-date-time",
   "version": "1.0.2",
-  "description": "LocalDate, LocalTime types and utilities for TS",
+  "description": "LocalDate, LocalTime and TimeSlot types and utilities for TS",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "sideEffects": false,

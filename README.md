@@ -1,3 +1,3 @@
 # io-ts-local-date-time
 
-LocalDate, LocalTime types and utilities for TS
+LocalDate, LocalTime & TimeSlot types and utilities for TS
