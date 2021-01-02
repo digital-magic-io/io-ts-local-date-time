@@ -1,4 +1,4 @@
-export function hello() {
-  // tslint:disable-next-line:no-console
-  console.log('Hello')
-}
+import * as LocalDate from './localdate'
+import * as LocalTime from './localtime'
+
+export { LocalDate, LocalTime }
