@@ -1,7 +1,7 @@
 {
-  "name": "@digital-magic/ts-local-date-time",
+  "name": "@digital-magic/io-ts-local-date-time",
   "version": "1.0.1",
-  "description": "LocalDate, LocalTime & LocalDateTime types and utilities for TS",
+  "description": "LocalDate, LocalTime types and utilities for TS",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "sideEffects": false,
@@ -30,16 +30,18 @@
   "author": "Jevgeni Goloborodko <jevgeni@digital-magic.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/digital-magic-io/ts-local-date-time/issues"
+    "url": "https://github.com/digital-magic-io/io-ts-local-date-time/issues"
   },
-  "homepage": "https://github.com/digital-magic-io/ts-local-date-time#readme",
+  "homepage": "https://github.com/digital-magic-io/io-ts-local-date-time#readme",
   "keywords": [
     "typescript",
     "template"
   ],
   "tags": [
     "typescript",
-    "template"
+    "io-ts",
+    "localtime",
+    "localdate"
   ],
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",

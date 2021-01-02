@@ -1,2 +1,3 @@
-# ts-template
-Template file for generic Type Script projects
+# io-ts-local-date-time
+
+LocalDate, LocalTime types and utilities for TS
