@@ -1,5 +1,5 @@
+import { isRight } from 'fp-ts/Either'
 import { LocalTime } from '../src/localtime'
-import { isRight } from 'fp-ts/lib/Either'
 
 test('LocalTime is decoded correctly', () => {
   expect(isRight(LocalTime.decode('1:1'))).toBeFalsy()

@@ -10,13 +10,15 @@ export const LocalDate = t.brand(t.string, regexRefinement(ISOLocalDateRegex), '
 export type LocalDate = t.TypeOf<typeof LocalDate>
 export const localDate = unsafeDecode<LocalDate, string, typeof LocalDate>(LocalDate)
 
-export const DateFromLocalDateDecoder = decoder<LocalDate, Date>('DateFromLocalDate', (u, c) =>
-  // const result = moment(v)
-  // return result.isValid() ? E.right(result.toDate()) : E.left('')
-  E.either.map(LocalDate.validate(u, c), (v) => new Date(v))
+export const DateFromLocalDateDecoder: t.Decoder<LocalDate, Date> = decoder<LocalDate, Date>(
+  'DateFromLocalDate',
+  (u, c) =>
+    // const result = moment(v)
+    // return result.isValid() ? E.right(result.toDate()) : E.left('')
+    E.either.map(LocalDate.validate(u, c), (v) => new Date(v))
 )
 
-export const dateFromLocalDateEncoder = (dateFormat: string) =>
+export const dateFromLocalDateEncoder = (dateFormat: string): t.Encoder<Date, LocalDate> =>
   encoder<Date, LocalDate>((v) => localDate(moment(v).format(dateFormat)))
 
 // example how to build a codec

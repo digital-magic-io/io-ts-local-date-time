@@ -25,7 +25,7 @@ export const SecondsFromLocalTimeDecoder = decoder<LocalTime, number>('SecondsFr
   E.either.map(LocalTime.validate(u, c), localTimeToSeconds)
 )
 
-export const secondsFromLocalTimeEncoder = (dateFormat: string) =>
+export const secondsFromLocalTimeEncoder = (dateFormat: string): t.Encoder<number, LocalTime> =>
   encoder<number, LocalTime>((v) => localTime(moment().startOf('day').add(v, 'second').format(dateFormat)))
 
 // example how to build a codec
@@ -37,7 +37,7 @@ export const secondsFromLocalTime = unsafeDecode<number, LocalTime, typeof Secon
   SecondsFromLocalTimeDecoder
 )
 
-export const timeOrd: Ord<LocalTime> = contramap((v: LocalTime) => localTimeToSeconds(v))(ordNumber)
+export const timeOrd: Ord<LocalTime> = contramap(localTimeToSeconds)(ordNumber)
 export const timeGreater = gt<LocalTime>(timeOrd)
 export const timeBetween = between(timeOrd)
 

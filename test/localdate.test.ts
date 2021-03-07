@@ -1,5 +1,5 @@
+import { isRight } from 'fp-ts/Either'
 import { LocalDate } from '../src/localdate'
-import { isRight } from 'fp-ts/lib/Either'
 
 test('LocalDate is decoded correctly', () => {
   expect(isRight(LocalDate.decode('10-12-2000'))).toBeFalsy()

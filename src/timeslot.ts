@@ -44,7 +44,7 @@ export const SecondsTimeSlotToTimeSlotDecoder = decoder<TimeSlot, SecondsTimeSlo
   )
 )
 
-export const secondsTimeSlotToTimeSlotEncoder = (dateFormat: string) =>
+export const secondsTimeSlotToTimeSlotEncoder = (dateFormat: string): t.Encoder<SecondsTimeSlot, TimeSlot> =>
   encoder<SecondsTimeSlot, TimeSlot>((v) => {
     return {
       timeSince: secondsFromLocalTimeEncoder(dateFormat).encode(v.timeSince),
@@ -69,7 +69,7 @@ export function slotOverlaps(x: SecondsTimeSlot, y: SecondsTimeSlot): boolean {
   return x.timeSince <= y.timeBefore && y.timeSince <= x.timeBefore
 }
 
-interface Pair<T1, T2> {
+type Pair<T1, T2> = {
   readonly first: T1
   readonly second: T2
 }
